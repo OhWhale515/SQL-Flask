@@ -19,6 +19,8 @@ def add():
             "rating": request.form["rating"]
         }
         all_games.append(new_game)
+        
+        return redirect(url_for('home'))
     return render_template('add.html')
 
 
