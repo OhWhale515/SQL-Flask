@@ -32,3 +32,6 @@ if __name__ == "__main__":
 
 
 cursor.execute("CREATE TABLE games (id INTEGER PRIMARY KEY, title varchar(250) NOT NULL UNIQUE, author varchar(250) NOT NULL, rating FLOAT NOT NULL)")
+
+cursor.execute("INSERT INTO games VALUES(1, 'GTA San Andreas', 'Playstation 2', '10')")
+db.commit()
