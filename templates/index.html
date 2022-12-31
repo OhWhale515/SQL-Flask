@@ -6,12 +6,15 @@
 </head>
 <body>
 <h1>My Library</h1>
+        {% if games == []: %}
+        <p>Library is empty.</p>
+        {% endif %}
     <ul>
         {% for game in games %}
         <li>{{game.title}} - {{game.console}} - {{game.rating}}/10</li>
         {% endfor %}
     </ul>
     
-<a href="">Add Video Game</a>
+<a href="{{ url_for('add')}}">Add Video Game</a>
 </body>
 </html>

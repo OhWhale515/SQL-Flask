@@ -7,7 +7,7 @@ all_games = []
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', games=all_games)
 
 
 @app.route("/add", methods=['GET', 'POST'])
