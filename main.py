@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
+import sqlite3
 
+db = sqlite3.connect("games-collection.db")
+cursor = db.cursor()
 app = Flask(__name__)
 
 all_games = []
@@ -27,3 +30,5 @@ def add():
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+cursor.execute("CREATE TABLE games (id INTEGER PRIMARY KEY, title varchar(250) NOT NULL UNIQUE, author varchar(250) NOT NULL, rating FLOAT NOT NULL)")
